@@ -39,7 +39,7 @@ public class NodeManager implements NodeManagerLocal {
 			AgentManagerLocal aml = (AgentManagerLocal) context.lookup(AgentManagerLocal.LOOKUP);
 			aml.startInit(getThisNode());
 			
-			HeartBeatLocal hbl = (HeartBeatLocal) context.lookup(HeartBeatLocal.LOOKUP);
+			//HeartBeatLocal hbl = (HeartBeatLocal) context.lookup(HeartBeatLocal.LOOKUP);
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}

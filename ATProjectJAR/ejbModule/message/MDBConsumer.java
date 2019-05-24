@@ -19,11 +19,11 @@ import models.AID;
  */
 @MessageDriven(activationConfig = {
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
-		@ActivationConfigProperty(propertyName = "destination", propertyValue = "queue/mdbConsumerQueue") })
+		@ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/queue/mojQueue") })
 public class MDBConsumer implements MessageListener {
 
 	public static final String REMOTE_FACTORY = "java:jboss/exported/jms/RemoteConnectionFactory";
-	public static final String MDB_CONSUMER_QUEUE = "java:jboss/exported/jms/queue/mdbConsumerQueue";
+	public static final String MDB_CONSUMER_QUEUE = "java:jboss/exported/jms/queue/mojQueue";
 
 	/**
 	 * Default constructor.
