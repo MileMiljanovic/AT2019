@@ -33,12 +33,13 @@ public class NodeManager implements NodeManagerLocal {
 
 	@PostConstruct
 	public void nodeInit() {
+		System.out.println("STARTED!");
 		setAgentCentre();
 		try {
 			Context context = new InitialContext();
 			AgentManagerLocal aml = (AgentManagerLocal) context.lookup(AgentManagerLocal.LOOKUP);
 			aml.startInit(getThisNode());
-			
+			System.out.println("AGENT MANAGER INITIATED");
 			//HeartBeatLocal hbl = (HeartBeatLocal) context.lookup(HeartBeatLocal.LOOKUP);
 		} catch (NamingException e) {
 			e.printStackTrace();
@@ -59,6 +60,8 @@ public class NodeManager implements NodeManagerLocal {
 
 			String masterHost = br.readLine();
 			String thisHost = br.readLine();
+			System.out.println("MASTER: " + masterHost);
+			System.out.println("THIS HOST: " + thisHost);
 			this.masterNode = new AgentCenter(masterHost);
 			this.thisNode = new AgentCenter(thisHost);
 		} catch (Exception e) {
