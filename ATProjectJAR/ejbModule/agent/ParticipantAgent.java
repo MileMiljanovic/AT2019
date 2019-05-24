@@ -8,18 +8,10 @@ import models.AID;
 import models.AgentClass;
 import utils.MessageBuilder;
 
-/**
- * @author Nikola
- *
- */
 @Stateful
 public class ParticipantAgent extends AgentClass {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see model.agent.AgentInterface#handleMessage(model.acl.ACLMessage)
-	 */
+
 	@Override
 	public void handleMessage(ACLMessage poruka) {
 		switch (poruka.getPerformative()) {

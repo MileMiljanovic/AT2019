@@ -13,9 +13,7 @@ import interfaces.WebSocketLocal;
 
 @ServerEndpoint("/websocket")
 public class Websocket {
-	
-	//public static final String WEBSOCKET = "java:app/AgentJAR/WebSocket!services.interfaces.WebSocketLocal";
-	
+		
 	public Websocket() { }
 	
 	@OnOpen

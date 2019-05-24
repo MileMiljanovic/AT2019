@@ -14,10 +14,7 @@ import models.AID;
 import models.AgentClass;
 import utils.MessageBuilder;
 
-/**
- * @author Nikola
- *
- */
+
 @Stateful
 public class InitiatorAgent extends AgentClass {
 

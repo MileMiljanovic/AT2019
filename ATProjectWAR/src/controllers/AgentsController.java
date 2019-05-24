@@ -28,7 +28,7 @@ public class AgentsController {
 	public List<AgentType> getAgentTypes() {
 		try {
 			Context context = new InitialContext();
-			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/AgentJAR/RestAgents!services.interfaces.RestAgentsLocal");
+			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
 			return ral.getAgentsClasses();
 		} catch (NamingException e) {
 			e.printStackTrace();
@@ -42,7 +42,7 @@ public class AgentsController {
 	public void newAgentTypes(List<AgentType> newTypes) {
 		try {
 			Context context = new InitialContext();
-			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/AgentJAR/RestAgents!services.interfaces.RestAgentsLocal");
+			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
 			for(AgentType a : newTypes) {
 				ral.addAgentType(a);
 			}
@@ -57,7 +57,7 @@ public class AgentsController {
 	public List<AID> getRunningAgents() {
 		try {
 			Context context = new InitialContext();
-			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/AgentJAR/RestAgents!services.interfaces.RestAgentsLocal");
+			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
 			return ral.getAgentsRunning();
 		} catch (NamingException e) {
 			e.printStackTrace();
@@ -71,7 +71,7 @@ public class AgentsController {
 	public void addRunningAgents(List<AID> runningAgents) {
 		try {
 			Context context = new InitialContext();
-			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/AgentJAR/RestAgents!services.interfaces.RestAgentsLocal");
+			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
 			for(AID a : runningAgents) {
 				ral.addRunningAgent(a);
 			}
@@ -86,7 +86,7 @@ public class AgentsController {
 		//  pokreni agenta sa zadatim imenom
 		try {
 			Context context = new InitialContext();
-			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/AgentJAR/RestAgents!services.interfaces.RestAgentsLocal");
+			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
 			ral.putAgentsRunning(new AgentType(type), name);
 		} catch (NamingException e) {
 			e.printStackTrace();
@@ -99,7 +99,7 @@ public class AgentsController {
 		// zaustavi odredjenog agenta
 		try {
 			Context context = new InitialContext();
-			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/AgentJAR/RestAgents!services.interfaces.RestAgentsLocal");
+			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
 			ral.deleteAgentsRunning(new AID(aid));
 		} catch (NamingException e) {
 			e.printStackTrace();
