@@ -10,7 +10,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 
-import agent.AgentCenter;
+import agent_center.AgentCenter;
 import interfaces.RestNodeLocal;
 
 @Path("/node")

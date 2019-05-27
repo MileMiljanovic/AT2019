@@ -13,9 +13,9 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import agent_center.AgentCenter;
 import agent_manager.AgentManagerLocal;
 import models.AgentType;
-import agent.AgentCenter;
 import interfaces.HeartBeatLocal;
 import utils.RestBuilder;
 

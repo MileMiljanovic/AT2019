@@ -10,10 +10,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 
+import agent_center.AgentCenter;
 import message.ACLMessage;
 import models.AID;
 import models.AgentType;
-import agent.AgentCenter;
 
 public interface RestAPI {
 

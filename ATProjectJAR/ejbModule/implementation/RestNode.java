@@ -6,9 +6,9 @@ import javax.ejb.Stateless;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
+import agent_center.AgentCenter;
 import agent_manager.AgentManagerLocal;
 import models.AgentType;
-import agent.AgentCenter;
 import node.NodeManagerLocal;
 import interfaces.RestNodeLocal;
 import utils.RestBuilder;

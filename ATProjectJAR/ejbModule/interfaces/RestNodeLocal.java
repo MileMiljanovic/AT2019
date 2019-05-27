@@ -2,7 +2,7 @@ package interfaces;
 
 import javax.ejb.Local;
 
-import agent.AgentCenter;
+import agent_center.AgentCenter;
 
 @Local
 public interface RestNodeLocal {

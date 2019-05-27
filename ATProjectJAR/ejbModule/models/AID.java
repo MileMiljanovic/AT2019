@@ -2,7 +2,7 @@ package models;
 
 import java.io.Serializable;
 
-import agent.AgentCenter;
+import agent_center.AgentCenter;
 
 public class AID implements Serializable{
 

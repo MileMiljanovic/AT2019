@@ -2,10 +2,10 @@ package utils;
 
 import org.json.JSONObject;
 
+import agent_center.AgentCenter;
 import message.ACLMessage;
 import models.AID;
 import models.AgentType;
-import agent.AgentCenter;
 
 public class JsonUtils {
 	

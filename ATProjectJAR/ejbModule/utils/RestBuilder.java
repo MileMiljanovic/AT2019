@@ -6,9 +6,9 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
+import agent_center.AgentCenter;
 import models.AID;
 import models.AgentType;
-import agent.AgentCenter;
 
 public class RestBuilder {
 	

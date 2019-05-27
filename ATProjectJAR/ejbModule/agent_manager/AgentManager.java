@@ -11,11 +11,11 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import agent_center.AgentCenter;
 import message.ACLMessage;
 import models.AID;
 import models.AgentClass;
 import models.AgentType;
-import agent.AgentCenter;
 import node.NodeManagerLocal;
 import interfaces.WebSocketLocal;
 import utils.JsonUtils;
@@ -37,7 +37,7 @@ public class AgentManager implements AgentManagerLocal {
 
 		final File basePackage = new File(
 				AgentManagerLocal.class.getProtectionDomain().getCodeSource().getLocation().getPath() + File.separator
-						+ "agents");
+						+ "agent");
 
 		ArrayList<AgentType> agentTypesList = processFile(basePackage);
 
@@ -55,12 +55,13 @@ public class AgentManager implements AgentManagerLocal {
 
 		if (f.isFile()) {
 			File parent = f.getParentFile();
-			String module = parent.getPath().substring(parent.getPath().lastIndexOf("agents"));
+			String module = parent.getPath().substring(parent.getPath().lastIndexOf("agent"));
 			module = module.replace(File.separatorChar, '.');
 			String name = f.getName();
 			name = name.substring(0, name.indexOf("."));
 			AgentType at = new AgentType(name, module);
 			types.add(at);
+			System.out.println("Name: " + at.getName() + ", module: " + at.getModule());
 		}
 
 		return types;
@@ -104,7 +105,7 @@ public class AgentManager implements AgentManagerLocal {
 	public void startAgent(AID agent) {
 		AID a = containsAgent(agent);
 		if (a != null) {
-			System.out.println("Vec postoji agent s tim identifikatorom!");
+			System.out.println("Agent already exists!");
 			return;
 		}
 
@@ -118,7 +119,7 @@ public class AgentManager implements AgentManagerLocal {
 				WebSocketLocal wsl = (WebSocketLocal) context.lookup(WebSocketLocal.LOOKUP);
 				wsl.sendMessage(JsonUtils.getAIDString(agent, true));
 			} else {
-				System.out.println("Agent tipa " + agent.getType() + " se ne moze dodati u mapu!");
+				System.out.println("Type " + agent.getType() + " cannot be added!");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -139,7 +140,7 @@ public class AgentManager implements AgentManagerLocal {
 				e.printStackTrace();
 			}
 		} else {
-			System.out.println("Ne postoji agent s tim identifikatorom!");
+			System.out.println("No such agent!");
 		}
 	}
 

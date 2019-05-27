@@ -10,8 +10,8 @@ import javax.ejb.TimerService;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
+import agent_center.AgentCenter;
 import interfaces.HeartBeatLocal;
-import agent.AgentCenter;
 import node.NodeManagerLocal;
 import utils.RestBuilder;
 
@@ -21,10 +21,10 @@ public class HeartBeat implements HeartBeatLocal {
 	@Resource
 	TimerService ts;
 
-	@Schedules({
-		@Schedule(hour = "*", minute = "*", second = "*/30", info = "every 30 seconds")
-		})
-	private void heartBeatPr() {
+	//@Schedules({
+	//	@Schedule(hour = "*", minute = "*", second = "*/30", info = "every 30 seconds")
+	//	})
+	/*private void heartBeatPr() {
 		System.out.println("###### Heartbeat ######");
 		try {
 			Context context = new InitialContext();
@@ -43,5 +43,5 @@ public class HeartBeat implements HeartBeatLocal {
 			e.printStackTrace();
 		}	
 	}
-
+*/
 }

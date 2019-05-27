@@ -4,10 +4,10 @@ import java.util.List;
 
 import javax.ejb.Local;
 
+import agent_center.AgentCenter;
 import message.ACLMessage;
 import models.AID;
 import models.AgentType;
-import agent.AgentCenter;
 
 @Local
 public interface AgentManagerLocal {

@@ -5,6 +5,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import agent_center.AgentCenter;
 import message.ACLMessage;
 import message.Performative;
 import models.AID;
