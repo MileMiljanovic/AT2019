@@ -39,7 +39,7 @@ public class WebSocket implements WebSocketLocal {
 
 	@Override
 	public void onError(Session session) throws Exception {
-		System.out.println("Greska u Websocketu.");
+		System.out.println("Error in websocket");
 		if (sessions.contains(session))
 			sessions.remove(session);
 	}

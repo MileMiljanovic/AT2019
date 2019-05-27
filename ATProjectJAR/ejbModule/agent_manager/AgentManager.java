@@ -42,6 +42,13 @@ public class AgentManager implements AgentManagerLocal {
 		ArrayList<AgentType> agentTypesList = processFile(basePackage);
 
 		agentTypes.put(center, agentTypesList);
+		
+		for (AgentType at: agentTypesList) {
+			AID a = new AID(at.getName()+ "1", center, at);
+			startAgent(a);
+		}
+		
+		
 	}
 
 	private ArrayList<AgentType> processFile(File f) {
@@ -115,9 +122,9 @@ public class AgentManager implements AgentManagerLocal {
 				((AgentClass) obj).setId(agent);
 				runningAgents.put(agent, (AgentClass) obj);
 
-				Context context = new InitialContext();
+				/*Context context = new InitialContext();
 				WebSocketLocal wsl = (WebSocketLocal) context.lookup(WebSocketLocal.LOOKUP);
-				wsl.sendMessage(JsonUtils.getAIDString(agent, true));
+				wsl.sendMessage(JsonUtils.getAIDString(agent, true));*/
 			} else {
 				System.out.println("Type " + agent.getType() + " cannot be added!");
 			}
@@ -214,6 +221,17 @@ public class AgentManager implements AgentManagerLocal {
 	@Override
 	public void deleteTypesByNode(AgentCenter center) {
 		agentTypes.remove(center);
+	}
+	
+	private AgentCenter lookupHost() {
+		try {
+			Context ctx = new InitialContext();
+			NodeManagerLocal nml = (NodeManagerLocal) ctx.lookup(NodeManagerLocal.LOOKUP);
+			return nml.getThisNode();
+		} catch (NamingException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }

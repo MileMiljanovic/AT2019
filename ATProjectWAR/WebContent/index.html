@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<title>Agents GUI</title>
+		<style>
+		p {
+			text-align: center;
+		
+		}
+		
+		textarea {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		</style>
+	</head>
+
+	<body onload="populate()">
+		<div class="container">
+			<div class="jumbotron">
+				<h1 style="text-align: center;">Agents GUI</h1> 
+			</div>
+		</div>
+		</br>
+		<div>
+		
+		<p>Get all agent types: <button type="button" class="btn btn-primary">Types</button></p>
+		<p>Get all running agents: <button type="button" class="btn btn-primary">Running agents</button></p>
+		<p>Get list of performatives: <button type="button" class="btn btn-primary">Performatives</button></p>
+		<p>Run an agent: <select id="agenttype"><option value="" disabled selected>Choose agent type</option></select> <select id="agentname"><option value="" disabled selected>Choose agent name</option></select> <button type="button" class="btn btn-primary">Run</button></p>
+		<p>Stop an agent: <select id="agentaid"><option value="" disabled selected>Choose agent</option></select> <button type="button" class="btn btn-primary">Stop</button></p>
+		</br>
+		</br>
+		<textarea readonly rows="10" cols="100">
+Test text asdf asdf 
+		</textarea>
+		</div>
+	
+	</body>
+</html>
