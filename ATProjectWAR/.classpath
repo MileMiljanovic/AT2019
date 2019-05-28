@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ATProjectJAR"/>
+	<classpathentry kind="lib" path="C:/Users/Mile/Desktop/AT/AT2019/ATProjectEAR/EarContent/json-20180130.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -35,7 +35,7 @@ public class RestMessage implements RestMessageLocal {
 			context.close();
 			Connection connection = cf.createConnection();
 			final Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-			connection.start();;
+			connection.start();
 			
 			ObjectMessage tmsg = session.createObjectMessage(msg);
 			MessageProducer producer = session.createProducer(queue);

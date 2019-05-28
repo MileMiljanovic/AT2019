@@ -122,9 +122,9 @@ public class AgentManager implements AgentManagerLocal {
 				((AgentClass) obj).setId(agent);
 				runningAgents.put(agent, (AgentClass) obj);
 
-				/*Context context = new InitialContext();
+				Context context = new InitialContext();
 				WebSocketLocal wsl = (WebSocketLocal) context.lookup(WebSocketLocal.LOOKUP);
-				wsl.sendMessage(JsonUtils.getAIDString(agent, true));*/
+				wsl.sendMessage(JsonUtils.getAIDString(agent, true));
 			} else {
 				System.out.println("Type " + agent.getType() + " cannot be added!");
 			}

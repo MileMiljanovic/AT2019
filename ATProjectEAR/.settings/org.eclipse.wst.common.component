@@ -9,5 +9,8 @@
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="json-20180130.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Mile/Desktop/AT/AT2019/ATProjectEAR/EarContent/json-20180130.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>
