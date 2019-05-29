@@ -28,7 +28,7 @@ public class WebSocket implements WebSocketLocal {
 
 	@Override
 	public void onMessage(Session session, String msg) throws Exception {
-		// nista nam ne stize sa angulara tako da je svejedno
+
 	}
 
 	@Override
