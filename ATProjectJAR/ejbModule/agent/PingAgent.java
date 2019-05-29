@@ -42,7 +42,7 @@ public class PingAgent extends AgentClass {
 		} else if (poruka.getPerformative() == Performative.inform) {
 			System.out.println("Reply received from Pong " + poruka.getSender());
 			System.out.println("Reply content: " + poruka.getContent());
-		}
+		} 
 	}
 
 	private AgentCenter lookupHost() {
