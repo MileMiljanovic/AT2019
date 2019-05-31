@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="jumbotron">
+		<h1 style="text-align: center;">Agents GUI</h1> 
+	</div>
+</div>
+
+<div style="text-align:center">
+
+<p>Get all agent types: <button type="button" class="btn btn-primary" (click)="onClickTypes($event)">Types</button></p>
+
+<p>Get all running agents: <button type="button" class="btn btn-primary" (click)="onClickRunning($event)">Running agents</button></p>
+
+<p>Get list of performatives: <button type="button" class="btn btn-primary" (click)="onClickPerf($event)">Performatives</button></p>
+
+<p>Run an agent: <select id="agenttype"><option value="" disabled selected>Choose agent type</option></select> <select id="agentname"><option value="" disabled selected>Choose agent name</option></select> <button type="button" class="btn btn-primary">Run</button></p>
+
+<p>Stop an agent: <select id="agentaid"><option value="" disabled selected>Choose agent</option></select> <button type="button" class="btn btn-primary">Stop</button></p>
+
+<p>Send a message: <select id="senderagent"><option value="" disabled selected>Choose sender</option></select> <select id="receiveragent"><option value="" disabled selected>Choose receiver</option></select>
+<select id="performativemsg"><option value="" disabled selected>Choose performative</option></select></p>
+<p>Content: <input type="text" id="contentmsg" style="width: 400px;"> <button type="button" class="btn btn-primary">Send</button></p>
+<br>
+<p>Console:</p>
+<textarea id="txtarea" readonly rows="10" cols="100"></textarea>
+<p><button type="button" class="btn btn-primary" (click)="onClickClear($event)">Clear console</button></p>
+
+</div>
+
+
+<router-outlet></router-outlet>
