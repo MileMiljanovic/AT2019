@@ -24,6 +24,8 @@ public class MDBConsumer implements MessageListener {
 
 	public static final String REMOTE_FACTORY = "java:jboss/exported/jms/RemoteConnectionFactory";
 	public static final String MDB_CONSUMER_QUEUE = "java:jboss/exported/jms/queue/mojQueue";
+	public static final String USERNAME = "guest";
+	public static final String PASSWORD = "guest.guest.1";
 
 	/**
 	 * Default constructor.

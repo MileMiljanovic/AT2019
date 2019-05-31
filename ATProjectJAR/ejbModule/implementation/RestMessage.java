@@ -29,11 +29,13 @@ public class RestMessage implements RestMessageLocal {
 		// posalji acl poruku
 		try {
 			final Properties env = new Properties();
+			env.put(Context.SECURITY_PRINCIPAL, MDBConsumer.USERNAME);
+            env.put(Context.SECURITY_CREDENTIALS, MDBConsumer.PASSWORD);
 			Context context = new InitialContext(env);
 			ConnectionFactory cf = (ConnectionFactory) context.lookup(MDBConsumer.REMOTE_FACTORY);
 			final Queue queue = (Queue) context.lookup(MDBConsumer.MDB_CONSUMER_QUEUE);
 			context.close();
-			Connection connection = cf.createConnection();
+			Connection connection = cf.createConnection(MDBConsumer.USERNAME, MDBConsumer.PASSWORD);
 			final Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 			connection.start();
 			

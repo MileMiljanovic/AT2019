@@ -25,7 +25,7 @@ public class MessageBuilder {
 			ConnectionFactory cf = (ConnectionFactory) context.lookup(MDBConsumer.REMOTE_FACTORY);
 			final Queue queue = (Queue) context.lookup(MDBConsumer.MDB_CONSUMER_QUEUE);
 			context.close();
-			Connection connection = cf.createConnection();
+			Connection connection = cf.createConnection(MDBConsumer.USERNAME, MDBConsumer.PASSWORD);
 			final Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 			connection.start();
 

@@ -12,13 +12,25 @@
 
 <p>Get list of performatives: <button type="button" class="btn btn-primary" (click)="onClickPerf($event)">Performatives</button></p>
 
-<p>Run an agent: <select id="agenttype"><option value="" disabled selected>Choose agent type</option></select> <select id="agentname"><option value="" disabled selected>Choose agent name</option></select> <button type="button" class="btn btn-primary">Run</button></p>
+<p>Run an agent: <select id="agenttype"><option value="" disabled selected>Choose agent type</option></select> <select id="agentname"><option value="" disabled selected>Choose agent name</option></select> <button type="button" class="btn btn-primary" (click)="onClickRun($event)">Run</button></p>
 
-<p>Stop an agent: <select id="agentaid"><option value="" disabled selected>Choose agent</option></select> <button type="button" class="btn btn-primary">Stop</button></p>
+<p>Stop an agent: <select id="agentaid"><option value="" disabled selected>Choose agent</option></select> <button type="button" class="btn btn-primary" (click)="onClickStop($event)">Stop</button></p>
 
-<p>Send a message: <select id="senderagent"><option value="" disabled selected>Choose sender</option></select> <select id="receiveragent"><option value="" disabled selected>Choose receiver</option></select>
-<select id="performativemsg"><option value="" disabled selected>Choose performative</option></select></p>
-<p>Content: <input type="text" id="contentmsg" style="width: 400px;"> <button type="button" class="btn btn-primary">Send</button></p>
+<p>Send a message:</p> 
+<p><select id="senderagent"><option value="" disabled selected>Choose sender</option></select> <select id="receiveragent"><option value="" disabled selected>Choose receiver</option></select>
+<select id="performativemsg"><option value="" disabled selected>Choose performative</option></select><select id="replytomsg"><option value="" disabled selected>Choose who to reply to</option></select></p>
+<p>Content: <input type="text" id="contentmsg" style="width: 400px;"></p>
+<p>Language: <input type="text" id="languagetmsg"></p>
+<p>Encoding: <input type="text" id="encodingmsg"></p>
+<p>Ontology: <input type="text" id="ontologymsg"></p>
+<p>Protocol: <input type="text" id="protocolmsg"></p>
+<p>Conversation id: <input type="text" id="convmsg"></p>
+<p>Reply with: <input type="text" id="replywithmsg"></p>
+<p>In reply to: <input type="text" id="inreplytomsg"></p>
+<p>Reply by: <input type="text" id="replybymsg"></p>
+<br>
+<button type="button" class="btn btn-primary" (click)="onClickSend($event)">Send</button>
+<br>
 <br>
 <p>Console:</p>
 <textarea id="txtarea" readonly rows="10" cols="100"></textarea>

@@ -13,7 +13,7 @@ public class PongAgent extends AgentClass {
 
 	@Override
 	public void handleMessage(ACLMessage poruka) {
-		System.out.println("Message received from Ping " + poruka.getSender());
+		System.out.println("Message received from Ping " + poruka.getContent());
 		if (poruka.getPerformative() == Performative.request) {
 			ACLMessage response = new ACLMessage();
 			response.setReceivers(new AID[] { poruka.getSender() });
