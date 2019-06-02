@@ -18,6 +18,8 @@ public class WebSocket implements WebSocketLocal {
 		for (Session s : sessions) {
 			s.getAsyncRemote().sendText(msg);
 		}
+		
+		System.out.println("MESSAGE TO WEBSOCKET: " + msg);
 	}
 
 	@Override
@@ -28,7 +30,7 @@ public class WebSocket implements WebSocketLocal {
 
 	@Override
 	public void onMessage(Session session, String msg) throws Exception {
-
+		
 	}
 
 	@Override

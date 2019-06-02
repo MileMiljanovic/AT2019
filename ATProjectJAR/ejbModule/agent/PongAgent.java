@@ -1,11 +1,11 @@
 package agent;
 
 import javax.ejb.Stateful;
-
 import message.ACLMessage;
 import message.Performative;
 import models.AID;
 import models.AgentClass;
+import utils.JsonUtils;
 import utils.MessageBuilder;
 
 @Stateful
@@ -19,7 +19,7 @@ public class PongAgent extends AgentClass {
 			response.setReceivers(new AID[] { poruka.getSender() });
 			response.setPerformative(Performative.inform);
 			response.setContent("Reply to message received from Ping " + poruka.getSender());
-			response.setSender(Id);
+			response.setSender(Id);			
 			MessageBuilder.sendACL(response);
 		}
 
