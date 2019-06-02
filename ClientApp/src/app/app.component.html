@@ -19,7 +19,7 @@
 
 <p>Send a message:</p> 
 <p>Sender: <select #senderagent><option *ngFor="let agent of this.ws.runningAgents" value="{{agent.name + '$' + agent.host.alias + '$' + agent.host.address + '$' + agent.type.name + '$' + agent.type.module}}">{{agent.name}}@{{agent.type.name}}</option></select></p>
-<p>Receivers: <select #receiveragent multiple="multiple"><option *ngFor="let agent of this.ws.runningAgents" value="{{agent.name + '$' + agent.host.alias + '$' + agent.host.address + '$' + agent.type.name + '$' + agent.type.module}}">{{agent.name}}@{{agent.type.name}}</option></select></p>
+<p>Receivers: <select #receiveragent multiple><option *ngFor="let agent of this.ws.runningAgents" value="{{agent.name + '$' + agent.host.alias + '$' + agent.host.address + '$' + agent.type.name + '$' + agent.type.module}}">{{agent.name}}@{{agent.type.name}}</option></select></p>
 <p>Performative: <select #performativemsg><option *ngFor="let performative of this.ws.performatives" value={{performative}}>{{performative}}</option></select></p>
 <p>Reply to: <select #replytomsg><option *ngFor="let agent of this.ws.runningAgents" value="{{agent.name + '$' + agent.host.alias + '$' + agent.host.address + '$' + agent.type.name + '$' + agent.type.module}}">{{agent.name}}@{{agent.type.name}}</option></select></p>
 <p>Content: <input #contentmsg type="text" style="width: 400px;"></p>
@@ -32,7 +32,7 @@
 <p>In reply to: <input #inreplytomsg type="text"></p>
 <p>Reply by: <input #replybymsg type="text"></p>
 <br>
-<button type="button" class="btn btn-primary" (click)="onClickSend($event, senderagent.value, receiveragent.value, performativemsg.value, replytomsg.value, contentmsg.value, languagemsg.value, encodingmsg.value, ontologymsg.value, 
+<button type="button" class="btn btn-primary" (click)="onClickSend($event, senderagent.value, receiveragent.selectedOptions, performativemsg.value, replytomsg.value, contentmsg.value, languagemsg.value, encodingmsg.value, ontologymsg.value, 
 protocolmsg.value, convmsg.value, replywithmsg.value, inreplytomsg.value, replybymsg.value)">Send</button>
 <br>
 <br>

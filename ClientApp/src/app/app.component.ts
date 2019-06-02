@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from  '@angular/common/http';
 import { WebsocketService } from './websocket.service';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -99,8 +100,10 @@ export class AppComponent {
   }
   
   onClickRun(event: any, typeVal, nameVal) {
-	console.log(typeVal);
-	console.log(nameVal);
+	if(nameVal == "") {
+		alert("Please choose a name for new agent!");
+		return;
+	}
 	this.httpClient.put('http://localhost:8080/ATProjectWAR/agent-app/agents/running/' + typeVal + "/" + nameVal, this.config)
 	.subscribe(
 		(data:any[]) => {
@@ -119,10 +122,21 @@ export class AppComponent {
   
   onClickSend(event: any, sender, receivers, perf, replyto, content, language, encoding, ontology, protocol, convid, replywith, inreply, replyby) {
 	  
-	console.log(receivers);
+	if(receivers == "") {
+		alert("Please choose receivers!");
+		return;
+	}
+	let rec = "";
+	for (let i = 0; i < receivers.length; i++) {
+		rec += "\"" + receivers[i].value + "\"";
+		if (i != receivers.length - 1) {
+			rec += ",";
+		}
+	}
+	console.log(rec);
 	let acl = "{\"performative\":\"" + perf + "\","
       + " \"sender\":\"" + sender + "\","
-      + " \"receivers\":[\"" + receivers + "\"],"
+      + " \"receivers\":[" + rec + "],"
       + " \"replyTo\":\"" + replyto + "\","
       + " \"content\":\"" + content + "\","
       + " \"language\":\"" + language + "\","
