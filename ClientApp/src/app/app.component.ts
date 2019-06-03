@@ -122,10 +122,15 @@ export class AppComponent {
   
   onClickSend(event: any, sender, receivers, perf, replyto, content, language, encoding, ontology, protocol, convid, replywith, inreply, replyby) {
 	  
-	if(receivers == "") {
+	if(receivers.length == 0) {
 		alert("Please choose receivers!");
 		return;
 	}
+	if(isNaN(replyby)) {
+		alert("Please enter valid value for reply by!");
+		return;
+	}
+	
 	let rec = "";
 	for (let i = 0; i < receivers.length; i++) {
 		rec += "\"" + receivers[i].value + "\"";

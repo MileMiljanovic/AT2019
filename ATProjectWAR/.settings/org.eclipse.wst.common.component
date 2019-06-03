@@ -2,7 +2,7 @@
     <wb-module deploy-name="ATProjectWAR">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <dependent-module archiveName="json-20180130.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/pc/Desktop/AT projekat/AT2019/ATProjectEAR/EarContent/json-20180130.jar">
+        <dependent-module archiveName="json-20180130.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ATProjectEAR/EarContent/json-20180130.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="ATProjectWAR"/>

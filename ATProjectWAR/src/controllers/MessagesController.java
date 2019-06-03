@@ -21,7 +21,6 @@ public class MessagesController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void sendMessage(ACLMessage msg) {
-		//salji acl poruku
 		try {
 			Context context = new InitialContext();
 			RestMessageLocal rml = (RestMessageLocal) context.lookup(RestMessageLocal.LOOKUP);
@@ -34,7 +33,6 @@ public class MessagesController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<String> getPerformatives() {
-		// dobavi listu performativa
 		try {
 			Context context = new InitialContext();
 			RestMessageLocal rml = (RestMessageLocal) context.lookup(RestMessageLocal.LOOKUP);

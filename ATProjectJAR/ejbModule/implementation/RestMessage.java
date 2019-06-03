@@ -44,7 +44,7 @@ public class RestMessage implements RestMessageLocal {
 			producer.send(tmsg);	
 			producer.close();
 			connection.stop();
-			connection.close();	
+			connection.close();
 		} catch (NamingException | JMSException e) {
 			e.printStackTrace();
 		}

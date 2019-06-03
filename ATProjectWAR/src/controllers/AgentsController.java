@@ -36,21 +36,6 @@ public class AgentsController {
 		}
 	}
 	
-	@POST
-	@Path("/classes")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public void newAgentTypes(List<AgentType> newTypes) {
-		try {
-			Context context = new InitialContext();
-			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
-			for(AgentType a : newTypes) {
-				ral.addAgentType(a);
-			}
-		} catch (NamingException e) {
-			e.printStackTrace();
-		}
-	}
-	
 	@GET
 	@Path("/running")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -65,25 +50,9 @@ public class AgentsController {
 		}
 	}
 	
-	@POST
-	@Path("/running")
-	@Produces(MediaType.APPLICATION_JSON)
-	public void addRunningAgents(List<AID> runningAgents) {
-		try {
-			Context context = new InitialContext();
-			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
-			for(AID a : runningAgents) {
-				ral.addRunningAgent(a);
-			}
-		} catch (NamingException e) {
-			e.printStackTrace();
-		}
-	}
-	
 	@PUT
 	@Path("/running/{type}/{name}")
 	public void startAgent(@PathParam("type") String type,@PathParam("name") String name) {
-		//  pokreni agenta sa zadatim imenom
 		try {
 			Context context = new InitialContext();
 			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
@@ -96,7 +65,6 @@ public class AgentsController {
 	@DELETE
 	@Path("/running/{aid}")
 	public void stopAgent(@PathParam("aid") String aid) {
-		// zaustavi odredjenog agenta
 		try {
 			Context context = new InitialContext();
 			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");

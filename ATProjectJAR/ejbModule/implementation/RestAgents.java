@@ -71,22 +71,5 @@ public class RestAgents implements RestAgentsLocal {
 		}
 	}
 
-	@Override
-	public void addAgentType(AgentType at) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void removeAgentType(AgentType at) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addRunningAgent(AID aid) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
