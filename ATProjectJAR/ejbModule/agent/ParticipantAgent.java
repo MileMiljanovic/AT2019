@@ -42,11 +42,8 @@ public class ParticipantAgent extends AgentClass {
 			reply.setReceivers(new AID[] { msg.getSender() });
 		}
 
-		if (msg.getReplyBy() < System.currentTimeMillis()) {
-			System.out.println(Id + ": failed to reply by deadline. Discarding reply.");
-		} else {
-			MessageBuilder.sendACL(reply);
-		}
+		MessageBuilder.sendACL(reply);
+
 	}
 
 	private void handleRejectProposal(ACLMessage msg) {
@@ -59,7 +56,6 @@ public class ParticipantAgent extends AgentClass {
 		reply.setReceivers(new AID[] { msg.getSender() });
 
 		try {
-			// simulacija nekakvog rada
 			Thread.sleep(2500);
 
 			if (Math.random() > 0.4) {

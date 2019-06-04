@@ -40,13 +40,11 @@ public class MDBConsumer implements MessageListener {
 		try {
 			ACLMessage msg = (ACLMessage) ((ObjectMessage) message).getObject();
 			AID[] receivers = msg.getReceivers();
-
+			System.out.println("MESSAGE ON QUEUE! - " + message);
 			Context context = new InitialContext();
 			AgentManagerLocal manager = (AgentManagerLocal) context.lookup(AgentManagerLocal.LOOKUP);
 			for (AID a : receivers) {
-				if (!manager.msgToAgent(a, msg)) {
-					// TODO slanje poruke na drugi cvor
-				}
+				manager.msgToAgent(a, msg);
 			}
 		} catch (JMSException e) {
 			e.printStackTrace();
