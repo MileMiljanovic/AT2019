@@ -21,9 +21,8 @@ public class PingAgent extends AgentClass {
 	public void handleMessage(ACLMessage poruka) {
 		if (poruka.getPerformative() == Performative.request) {
 
-			// sadrzaj poruke je ime pong agenta
 			AID receiver = new AID();
-			receiver.setName(poruka.getContent());
+			receiver.setName(poruka.getSender().getName());
 			System.out.println("Request to send message to " + poruka.getContent() + " Pong.");
 			AgentType type = new AgentType(PongAgent.class.getSimpleName(), PongAgent.class.getPackage().getName());
 			receiver.setType(type);

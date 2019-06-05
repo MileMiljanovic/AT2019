@@ -30,7 +30,7 @@ public class WebSocket implements WebSocketLocal {
 
 	@Override
 	public void onMessage(Session session, String msg) throws Exception {
-		
+
 	}
 
 	@Override
