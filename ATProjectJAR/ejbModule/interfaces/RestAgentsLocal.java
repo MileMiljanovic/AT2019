@@ -14,5 +14,8 @@ public interface RestAgentsLocal {
 	List<AID> getAgentsRunning();
 	void putAgentsRunning(AgentType type, String name);
 	void deleteAgentsRunning(AID aid);
+    void addAgentType(AgentType at);
+    void removeAgentType(AgentType at);
+    void addRunningAgent(AID aid);
 	
 }

@@ -36,6 +36,21 @@ public class AgentsController {
 		}
 	}
 	
+	@POST
+	@Path("/classes")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void newAgentTypes(List<AgentType> newTypes) {
+		try {
+			Context context = new InitialContext();
+			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/AgentJAR/RestAgents!services.interfaces.RestAgentsLocal");
+			for(AgentType a : newTypes) {
+				ral.addAgentType(a);
+			}
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	@GET
 	@Path("/running")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -47,6 +62,21 @@ public class AgentsController {
 		} catch (NamingException e) {
 			e.printStackTrace();
 			return null;
+		}
+	}
+	
+	@POST
+	@Path("/running")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void addRunningAgents(List<AID> runningAgents) {
+		try {
+			Context context = new InitialContext();
+			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/AgentJAR/RestAgents!services.interfaces.RestAgentsLocal");
+			for(AID a : runningAgents) {
+				ral.addRunningAgent(a);
+			}
+		} catch (NamingException e) {
+			e.printStackTrace();
 		}
 	}
 	
@@ -73,6 +103,7 @@ public class AgentsController {
 			e.printStackTrace();
 		}
 	}
+	
 
 }
 

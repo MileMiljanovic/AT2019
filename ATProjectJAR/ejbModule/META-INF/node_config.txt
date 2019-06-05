@@ -1,2 +1,2 @@
 master$angstrom:8080
-slave1$localhost:8080
+master$angstrom:8080
