@@ -73,19 +73,37 @@ public class RestAgents implements RestAgentsLocal {
 
 	@Override
 	public void addAgentType(AgentType at) {
-		// TODO Auto-generated method stub
+		try {
+			Context context = new InitialContext();
+			AgentManagerLocal aml = (AgentManagerLocal) context.lookup(AgentManagerLocal.LOOKUP);
+			aml.addAgentType(at);
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
 		
 	}
 
 	@Override
 	public void removeAgentType(AgentType at) {
-		// TODO Auto-generated method stub
+		try {
+			Context context = new InitialContext();
+			AgentManagerLocal aml = (AgentManagerLocal) context.lookup(AgentManagerLocal.LOOKUP);
+			aml.deleteAgentType(at);
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
 		
 	}
 
 	@Override
 	public void addRunningAgent(AID aid) {
-		// TODO Auto-generated method stub
+		try {
+			Context context = new InitialContext();
+			AgentManagerLocal aml = (AgentManagerLocal) context.lookup(AgentManagerLocal.LOOKUP);
+			aml.startAgent(aid);
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
 		
 	}
 

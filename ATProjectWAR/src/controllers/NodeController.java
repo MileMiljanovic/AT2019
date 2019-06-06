@@ -8,6 +8,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import agent_center.AgentCenter;
@@ -22,7 +23,6 @@ public class NodeController {
 		try {
 			Context context = new InitialContext();
 			RestNodeLocal rnl = (RestNodeLocal) context.lookup(RestNodeLocal.LOOKUP);
-			System.out.println("REST ENDPOINT!");
 			rnl.postNode(request);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -43,6 +43,7 @@ public class NodeController {
 	
 	// heartbeat protokol
 	@GET
+	@Produces(MediaType.TEXT_PLAIN)
 	public boolean heartBeat() {
 		return true;
 	}

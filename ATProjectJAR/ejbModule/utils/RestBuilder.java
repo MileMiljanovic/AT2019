@@ -16,7 +16,6 @@ public class RestBuilder {
 		ResteasyClient client = new ResteasyClientBuilder().build();
         ResteasyWebTarget target = client.target("http://" + master.getAddress() + "/ATProjectWAR/agent-app");
         RestAPI rest = target.proxy(RestAPI.class);
-        System.out.println("REST BUILDER ON MASTER CALLED!");
         rest.connectNodes(slave);
 	}
 		

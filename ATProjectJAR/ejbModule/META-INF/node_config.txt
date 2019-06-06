@@ -1,2 +1,2 @@
-master$angstrom:8080
-master$angstrom:8080
+master$localhost:8080
+master$localhost:8080

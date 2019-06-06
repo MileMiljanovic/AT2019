@@ -35,12 +35,10 @@ public class RestNode implements RestNodeLocal {
 			
 			if(nml.getMasterNode().getAddress().equals(nml.getThisNode().getAddress())) {
 				// ako sam ja master onda mi je stigao poziv od novog cvora da ga ubacim u mrezu
-				System.out.println("CONNECT SLAVE CALLED!");
 				connectSlave(ac);
 			} else {
 				// ili sam vec u mrezi pa mi master salje novi cvor
 				// ili sam novi cvor pa mi master salje ostale cvorove u mrezi
-				System.out.println("ADD SLAVE CALLED!");
 				nml.addSlave(ac);
 			}
 		} catch(Exception e) {
@@ -64,8 +62,7 @@ public class RestNode implements RestNodeLocal {
 			AgentManagerLocal aml = (AgentManagerLocal) context.lookup(AgentManagerLocal.LOOKUP);// master cvor dostavlja spisak tipova agenata novom cvoru
 			RestBuilder.sendNewAgentTypes(slaveAddr, aml.getAgentTypes());
 			RestBuilder.sendRunningAgentsToSlave(slaveAddr, aml.getRunningAgents());// master cvor dostavlja spisak tipova agenata novom cvoru
-			nml.addSlave(slaveAddr, slaveTypes); 
-			System.out.println("ALL METHODS DONE!");// na ovaj cvor dodamo novi cvor i njegove tipove
+			nml.addSlave(slaveAddr, slaveTypes); // na ovaj cvor dodamo novi cvor i njegove tipove
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 		

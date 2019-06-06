@@ -21,20 +21,20 @@ public class HeartBeat implements HeartBeatLocal {
 	@Resource
 	TimerService ts;
 
-	//@Schedules({
-	//	@Schedule(hour = "*", minute = "*", second = "*/30", info = "every 30 seconds")
-	//	})
-	/*private void heartBeatPr() {
-		System.out.println("###### Heartbeat ######");
+	@Schedules({
+		@Schedule(hour = "*", minute = "*", second = "*/30", info = "every 30 seconds")
+		})
+	private void heartBeatPr() {
+		//System.out.println("###### Heartbeat ######");
 		try {
 			Context context = new InitialContext();
 			NodeManagerLocal nml = (NodeManagerLocal) context.lookup(NodeManagerLocal.LOOKUP);
 			List<AgentCenter> nodes = nml.getSlaves();
 			
 			for(AgentCenter a : nodes) {
+				System.out.println("Heartbeat: " + RestBuilder.getHeartBeat(a));
 				if(RestBuilder.getHeartBeat(a) == false) {
 					if(RestBuilder.getHeartBeat(a) == false) {
-						// brisemo ovaj cvor
 						nml.deleteSlave(a);
 					}
 				}
@@ -43,5 +43,5 @@ public class HeartBeat implements HeartBeatLocal {
 			e.printStackTrace();
 		}	
 	}
-*/
+
 }

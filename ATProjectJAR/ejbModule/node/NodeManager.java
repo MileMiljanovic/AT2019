@@ -40,7 +40,7 @@ public class NodeManager implements NodeManagerLocal {
 			AgentManagerLocal aml = (AgentManagerLocal) context.lookup(AgentManagerLocal.LOOKUP);
 			aml.startInit(getThisNode());
 			System.out.println("AGENT MANAGER INITIATED");
-			//HeartBeatLocal hbl = (HeartBeatLocal) context.lookup(HeartBeatLocal.LOOKUP);
+			HeartBeatLocal hbl = (HeartBeatLocal) context.lookup(HeartBeatLocal.LOOKUP);
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}

@@ -112,7 +112,7 @@ public class AgentManager implements AgentManagerLocal {
 	public void startAgent(AID agent) {
 		AID a = containsAgent(agent);
 		if (a != null) {
-			System.out.println("Agent already exists!");
+			System.out.println("Agent " +  agent.getName() +" already exists!");
 			return;
 		}
 
