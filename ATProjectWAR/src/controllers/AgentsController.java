@@ -42,7 +42,7 @@ public class AgentsController {
 	public void newAgentTypes(List<AgentType> newTypes) {
 		try {
 			Context context = new InitialContext();
-			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/AgentJAR/RestAgents!services.interfaces.RestAgentsLocal");
+			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
 			for(AgentType a : newTypes) {
 				ral.addAgentType(a);
 			}
@@ -71,7 +71,7 @@ public class AgentsController {
 	public void addRunningAgents(List<AID> runningAgents) {
 		try {
 			Context context = new InitialContext();
-			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/AgentJAR/RestAgents!services.interfaces.RestAgentsLocal");
+			RestAgentsLocal ral = (RestAgentsLocal) context.lookup("java:app/ATProjectJAR/RestAgents!interfaces.RestAgentsLocal");
 			for(AID a : runningAgents) {
 				ral.addRunningAgent(a);
 			}

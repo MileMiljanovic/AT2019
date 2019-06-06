@@ -22,6 +22,7 @@ public class NodeController {
 		try {
 			Context context = new InitialContext();
 			RestNodeLocal rnl = (RestNodeLocal) context.lookup(RestNodeLocal.LOOKUP);
+			System.out.println("REST ENDPOINT!");
 			rnl.postNode(request);
 		} catch (Exception e) {
 			e.printStackTrace();
